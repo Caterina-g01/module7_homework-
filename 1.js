@@ -1,4 +1,5 @@
-function showFruits(obj) {
+
+function getOwnProp(obj) {
 	for (let key in obj) {
 		if (obj.hasOwnProperty(key)) {
 			console.log(`Key: ${key}, Value: ${obj[key]}`);
@@ -6,9 +7,17 @@ function showFruits(obj) {
 	}
 }
 
-let fruits = {
-	apples: 2,
-	oranges: 3,
-};
 
-showFruits(fruits);
+const user = {
+	name: "Ivan",
+	city: "Moscow",
+	age: 25
+}
+
+const student = Object.create(user);
+
+student.name = "Elena";
+student.surname = "Ivanova"
+
+getOwnProp(student);
+

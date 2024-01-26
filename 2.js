@@ -1,24 +1,31 @@
-function checkInObj(str, obj) {
-	for(let key in obj) {
-		if (key === str) {
+function checkAvailabilitty(str, obj) {
+	for (let key in obj) {
+		if (obj[key] === str) {
 			return true;
+		} else {
+			return false;
 		}
-	} 
-	return false;
+	}
 }
 
-let userInfoObj = { name: "Kate", age: "30" };
-let result = checkInObj("age", userInfoObj);
-console.log(result);
 
-
-
-
-// вариант 2 через метод hasOwnProperty
-function checkInObj(str, obj) {
-	return obj.hasOwnProperty(str);
+const user = {
+	name: "Ivan",
+	city: "Moscow",
+	age: 25
 }
 
-let userInfoObj = { name: "Kate", age: "30" };
-let result = checkInObj("age", userInfoObj);
-console.log(result);
+const myString = "Ivan";
+
+
+console.log(checkAvailabilitty(myString, user));
+
+
+
+
+
+
+
+
+
+
